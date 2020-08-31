@@ -54,7 +54,7 @@ npm start
 
 ## Webpack
 
-- ブラウザ実行が可能な静的JSの生成
+- ブラウザ実行が可能な静的JSの生成(複数のjsの統合)
 
 ### 環境構築
 
@@ -64,11 +64,13 @@ npm audit fix
 ```
 
 ```
+const path = require('path')
+
 module.exports = {
     entry: './src/entry.js',
 
     output: {
-        path: '絶対パス'
+        path: __dirname + '<path>'
     },
 
     module: {
