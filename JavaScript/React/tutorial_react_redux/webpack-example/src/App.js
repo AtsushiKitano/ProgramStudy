@@ -3,17 +3,44 @@ import TodoInput from './TodoInput';
 import TodoList from './TodoList';
 
 class App extends Component {
-    render(){
-        const tasks = [
-            { title: 'Todo1つ目', id:0},
-            { title: 'Todo2つ目', id:1},
-        ];
+    constructor(props){
+        super(props);
+        this.state = {
+            tasks: [
+                {
+                    title: 'デフォルトTODO',
+                    id: 0,
+                },
+            ],
+            uniqueId: 1,
+        };
+    }
 
+    addTodo(title){
+        const {
+            tasks,
+            uniqueId,
+        } = this.state;
+
+        task.push({
+            title,
+            id: uniqueId,
+        });
+
+        this.setState({
+            tasks,
+            uniqueId: uniqueId + 1,
+        });
+
+        this.addTodo = this.addTodo.bind(this);
+    }
+
+    render(){
         return(
-                <div>
+                <div className="App">
                 <h1> TODO App </h1>
                 <TodoInput />
-                <TodoList tasks={tasks} />
+                <TodoList tasks={this.state.tasks} />
                 </div>
         );
     }
