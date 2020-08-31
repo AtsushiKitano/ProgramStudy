@@ -11,6 +11,19 @@ nodebrew install-binary stable
 npm install -g create-react-app
 ```
 
+# 実行方法
+
+1. jsファイルのコンパイル
+1. コンパイルしたjsファイルをHTMLから読み込む
+
+```
+npx webpack --config ./webpack.config.js
+```
+
+```
+<script src="<output file path>"</script>
+```
+
 # Reactプロジェクトの開発方法
 
 1. プロジェクトの作成
@@ -69,17 +82,4 @@ module.exports = {
         ]
     }
 };
-```
-
-## 実行方法
-
-1. jsファイルのコンパイル
-1. コンパイルしたjsファイルをHTMLから読み込む
-
-```
-npx webpack --config ./webpack.config.js
-```
-
-```
-<script src="<output file path>"</script>
 ```
