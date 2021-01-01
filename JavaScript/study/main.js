@@ -16,8 +16,23 @@ function createList(list,id) {
   }
   document.getElementById(id).appendChild(newList);
 }
+
+function keyDownA(keyInput) {
+  const newP = document.createElement("p");
+
+  if (keyInput === "A" ) {
+    console.log("成功");
+    newP.appendChild(document.createTextNode("成功"));
+  } else {
+    console.log("失敗");
+    newP.appendChild(document.createTextNode("失敗"));
+  }
+}
+
+
 addElement("anime");
-addElement("test");
+addElement("sample");
 createList(Animes, "anime");
-createList(companies, "test");
+const keyev = document.addEventListener("keydown", evt => keyDownA(evt.key));
+
 console.log(document.body);
